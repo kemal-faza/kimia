@@ -22,7 +22,7 @@ const insertTable = atoms => {
         html += `
         <tr>
             <th scope="row">${i + 1}</th>
-            <td><sup>${atom.nomorAtom}</sup><sub>${atom.nomorMassa}</sub>${atom.simbol}</td>
+            <td><sup>${atom.nomorMassa}</sup><sub>${atom.nomorAtom}</sub>${atom.simbol}</td>
             <td>${atom.nomorAtom}</td>
             <td>${atom.nomorAtom}</td>
             <td>${atom.nomorMassa - atom.nomorAtom}</td>
