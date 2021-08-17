@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+        <title>Halaman Konfigurasi Elektron Atom</title>
+    </head>
+
+    <body>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="./">Beranda</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link active" href="./">Konfigurasi Elektron</a>
+                        <a class="nav-link" href="golongan.html">Golongan dan Periode</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container my-5 py-5">
+            <h1>Konfigurasi Elektron Atom</h1>
+
+            <button class="btn btn-primary my-4" id="atomModalBtn" data-bs-toggle="modal" data-bs-target="#atomModal">
+                Tabel &raquo; Teks
+            </button>
+
+            <div class="row">
+                <div class="col">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Atom</th>
+                                <th scope="col">Proton</th>
+                                <th scope="col">Elektron</th>
+                                <th scope="col">Neutron</th>
+                                <th scope="col">Konfigurasi Kulit</th>
+                                <th scope="col">Konfigurasi Sub Kulit</th>
+                                <th scope="col">Bilangan Kuantum</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-atoms">
+                            <tr>
+                                <th scope="row">1</th>
+                                <td><sup>1</sup><sub>1</sub>H</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1s<sup>1</sup></td>
+                                <td>n = 1, l = 0, m = 0, s = 1/2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="atomModal" tabindex="-1" aria-labelledby="atomModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="atomModalLabel">Bentuk Teks</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="list-group" id="atoms-list"></ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+            crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </body>
+
+</html>
