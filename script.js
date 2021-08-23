@@ -14,9 +14,12 @@ const konfigurasiSubKulit = subkulit => {
     }).join(' ');
 }
 
-const insertTable = atoms => {
+const insertTableElektron = atoms => {
     const table = document.querySelector('#table-atoms');
     let html = ``;
+    if (!table) {
+        return;
+    }
 
     atoms.forEach((atom, i) => {
         html += `
@@ -36,11 +39,14 @@ const insertTable = atoms => {
     table.innerHTML = html;
 }
 
-const konversiTabel = atoms => {
+const konversiTabelElektron = atoms => {
     const atomList = document.querySelector('#atoms-list');
     let html = ``;
+    if (!atomList) {
+        return;
+    }
 
-    atoms.forEach((atom, i) => {
+    atoms.forEach(atom => {
         html += `
         <li class="list-group-item"><sup>${atom.nomorAtom}</sup><sub>${atom.nomorMassa}</sub>${atom.simbol} | p = ${atom.nomorAtom} e = ${atom.nomorAtom} n = ${atom.nomorMassa - atom.nomorAtom} | ${atom.konfigurasiKulit} | ${konfigurasiSubKulit(atom.konfigurasiSubKulit)} | ${atom['bilanganKuantum'].join(', ')}</li>
         `;
@@ -49,14 +55,55 @@ const konversiTabel = atoms => {
     atomList.innerHTML = html;
 }
 
+const insertTabelGol = atoms => {
+    const tableBody = document.querySelector('#table-atoms-gol');
+    let html = ``;
+    if (!tableBody) {
+        return;
+    }
+
+    atoms.forEach((atom, i) => {
+        html += `
+        <tr>
+            <th scope="row">${i + 1}</th>
+            <td><sup>${atom['nomorMassa']}</sup><sub>${atom['nomorAtom']}</sub>${atom['simbol']}</td>
+            <td>${atom['konfigurasiSubKulit']}</td>
+            <td>${atom['golongan']}</td>
+            <td>${atom['periode']}</td>
+        </tr>
+        `;
+    });
+
+    tableBody.innerHTML = html;
+}
+
+const konversiTabelGol = atoms => {
+    const atomsList = document.querySelector('#atoms-gol-list');
+    let html = ``;
+    if (!atomsList) {
+        return;
+    }
+
+    atoms.forEach(atom => {
+        html += `
+        <li class="list-group-item"><sup>${atom['nomorMassa']}</sup><sub>${atom['nomorAtom']}</sub>${atom['simbol']} | ${atom.konfigurasiSubKulit} | ${atom.golongan} | ${atom.periode}</li>
+        `;
+    });
+
+    atomsList.innerHTML = html;
+}
+
 const load = async () => {
     const atoms = await loadAtoms();
-    insertTable(atoms);
+    insertTableElektron(atoms);
+    insertTabelGol(atoms.filter(atom => atom.golongan));
 
     const atomModalBtn = document.querySelector('#atomModalBtn');
     atomModalBtn.addEventListener('click', function () {
-        konversiTabel(atoms);
-    })
+        konversiTabelElektron(atoms);
+        konversiTabelGol(atoms.filter(atom => atom.golongan));
+    });
+
 }
 
 document.body.onload = load;

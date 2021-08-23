@@ -30,13 +30,52 @@
             </div>
         </nav>
 
-        <div class="container vh-100 d-flex align-items-center justify-content-center">
-            <h1 class="display-1">Segera...</h1>
+        <div class="container my-5 py-5">
+            <h1>Daftar Penggolongan Atom</h1>
+
+            <button class="btn btn-primary my-4" id="atomModalBtn" data-bs-toggle="modal" data-bs-target="#atomModal">
+                Tabel &raquo; Teks
+            </button>
+
+            <div class="row">
+                <div class="col">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Atom</th>
+                                <th scope="col">Konfigurasi Elektron</th>
+                                <th scope="col">Golongan</th>
+                                <th scope="col">Periode</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-atoms-gol"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="atomModal" tabindex="-1" aria-labelledby="atomModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="atomModalLabel">Bentuk Teks</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="list-group" id="atoms-gol-list"></ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
             crossorigin="anonymous"></script>
+        <script src="script.js"></script>
     </body>
 
 </html>
