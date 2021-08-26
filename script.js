@@ -67,7 +67,7 @@ const insertTabelGol = atoms => {
         <tr>
             <th scope="row">${i + 1}</th>
             <td><sup>${atom['nomorMassa']}</sup><sub>${atom['nomorAtom']}</sub>${atom['simbol']}</td>
-            <td>${atom['konfigurasiSubKulit']}</td>
+            <td>${konfigurasiSubKulit(atom['konfigurasiSubKulit'])}</td>
             <td>${atom['golongan']}</td>
             <td>${atom['periode']}</td>
         </tr>
