@@ -48,7 +48,7 @@ const konversiTabelElektron = atoms => {
 
     atoms.forEach(atom => {
         html += `
-        <li class="list-group-item"><sup>${atom.nomorAtom}</sup><sub>${atom.nomorMassa}</sub>${atom.simbol} | p = ${atom.nomorAtom} e = ${atom.nomorAtom} n = ${atom.nomorMassa - atom.nomorAtom} | ${atom.konfigurasiKulit} | ${konfigurasiSubKulit(atom.konfigurasiSubKulit)} | ${atom['bilanganKuantum'].join(', ')}</li>
+        <li class="list-group-item"><sup>${atom.nomorMassa}</sup><sub>${atom.nomorAtom}</sub>${atom.simbol} | p = ${atom.nomorAtom} e = ${atom.nomorAtom} n = ${atom.nomorMassa - atom.nomorAtom} | ${atom.konfigurasiKulit} | ${konfigurasiSubKulit(atom.konfigurasiSubKulit)} | ${atom['bilanganKuantum'].join(', ')}</li>
         `;
     });
 
